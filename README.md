@@ -10,7 +10,7 @@ Role to download and install the [Go language SDK](https://golang.org/).
 Requirements
 ------------
 
-* Ansible Core >= 2.12
+* Ansible Core >= 2.17
 
 * Linux Distribution
 
@@ -18,14 +18,13 @@ Requirements
 
         * Debian
 
-            * Buster (10)
             * Bullseye (11)
             * Bookworm (12)
 
         * Ubuntu
 
-            * Focal (20.04)
             * Jammy (22.04)
+            * Noble (24.04)
 
     * RedHat Family
 
@@ -35,13 +34,13 @@ Requirements
 
         * Fedora
 
-            * 35
+            * 41
 
     * SUSE Family
 
         * openSUSE
 
-            * 15.5
+            * Tumbleweed
 
     * Note: other versions are likely to work but have not been tested.
 
@@ -53,7 +52,7 @@ are shown below):
 
 ```yaml
 # Go language SDK version number
-golang_version: '1.22.6'
+golang_version: '1.24.2'
 
 # Mirror to download the Go language SDK redistributable package from
 golang_mirror: 'https://storage.googleapis.com/golang'
@@ -74,6 +73,23 @@ The following versions of Go language SDK are supported without any additional
 configuration (for other versions follow the Advanced Configuration
 instructions):
 
+* `1.24.2`
+* `1.24.1`
+* `1.24.0`
+* `1.23.8`
+* `1.23.7`
+* `1.23.6`
+* `1.23.5`
+* `1.23.4`
+* `1.23.3`
+* `1.23.2`
+* `1.23.1`
+* `1.23.0`
+* `1.22.11`
+* `1.22.10`
+* `1.22.9`
+* `1.22.8`
+* `1.22.7`
 * `1.22.6`
 * `1.22.5`
 * `1.22.4`
@@ -252,6 +268,7 @@ instructions):
 * `1.10.2`
 * `1.10.1`
 * `1.10`
+* `1.9.7`
 * `1.9.6`
 * `1.9.5`
 * `1.9.4`
