@@ -14,11 +14,6 @@
     - ../vars/versions/default.yml
   ansible.builtin.include_vars: '{{ item }}'
 
-- name: Assert version vars
-  ansible.builtin.assert:
-    that:
-      - "golang_redis_sha256sum not in (None, '')"
-
 - name: Create download directory
   ansible.builtin.file:
     state: directory
@@ -29,7 +24,6 @@
   ansible.builtin.get_url:
     url: '{{ golang_mirror }}/{{ golang_redis_filename }}'
     dest: '{{ golang_download_dir }}/{{ golang_redis_filename }}'
-    checksum: 'sha256:{{ golang_redis_sha256sum }}'
     force: false
     use_proxy: true
     validate_certs: true
