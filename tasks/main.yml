@@ -60,6 +60,22 @@
     creates: '{{ golang_install_dir }}/bin'
   when: not ansible_check_mode
 
+- name: Restore stable Go binary name from legacy versioned install
+  become: true
+  ansible.builtin.command:
+    cmd: mv {{ golang_install_dir }}/bin/go{{ golang_version }} {{ golang_install_dir }}/bin/go
+    creates: '{{ golang_install_dir }}/bin/go'
+    removes: '{{ golang_install_dir }}/bin/go{{ golang_version }}'
+  when: not ansible_check_mode
+
+- name: Restore stable gofmt binary name from legacy versioned install
+  become: true
+  ansible.builtin.command:
+    cmd: mv {{ golang_install_dir }}/bin/gofmt{{ golang_version }} {{ golang_install_dir }}/bin/gofmt
+    creates: '{{ golang_install_dir }}/bin/gofmt'
+    removes: '{{ golang_install_dir }}/bin/gofmt{{ golang_version }}'
+  when: not ansible_check_mode
+
 # Set Go language SDK environment variables
 - name: Make sure /etc/profile.d exists
   become: true
